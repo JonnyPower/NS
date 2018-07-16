@@ -2029,11 +2029,12 @@ const int	kNumPlayerIndexBits = 6;
 const int	kPlayerIndexMask = 0x3F;
 const int	kNumIndexBits = 14;
 const int	kIndexMask = 0x3FFF;
-const int	kNumFlagBits = 3;
-const int	kFlagMask = 0x07;
+const int	kNumFlagBits = 4;
+const int	kFlagMask = 0x015;
 const int	kEntHierFlagPlayer		= 0x01;
 const int	kEntHierFlagDeletion	= 0x02;
 const int	kEntHierFlagUnderAttack = 0x04;
+const int	kEntHierFlagParasited = 0x08;
 
 
 #ifndef AVH_SERVER
@@ -2080,6 +2081,7 @@ const int	kEntHierFlagUnderAttack = 0x04;
 		int index = 0;
 
 		ent.mUnderAttack = ((flags & kEntHierFlagUnderAttack) == kEntHierFlagUnderAttack );
+		ent.mParasited = ((flags & kEntHierFlagParasited) == kEntHierFlagParasited);
 		ent.mUser3 = (AvHUser3)(long_data & kStatusMask);
 		long_data >>= kNumStatusBits;
 		ent.mTeam = (AvHTeamNumber)(long_data & kTeamMask);
@@ -2226,6 +2228,7 @@ const int	kEntHierFlagUnderAttack = 0x04;
 				ASSERT( ( short_data & kFlagMask ) == 0 );
 			short_data |= kEntHierFlagPlayer;
 			if ( ent.mUnderAttack ) short_data |= kEntHierFlagUnderAttack;
+			if ( ent.mParasited ) short_data |= kEntHierFlagParasited;
 			break;
 		}
 		default:
