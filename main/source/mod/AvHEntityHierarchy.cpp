@@ -204,6 +204,7 @@ void AvHEntityHierarchy::BuildFromTeam(const AvHTeam* inTeam, BaseEntityListType
             mapEntity.mTeam  = (AvHTeamNumber)(theBaseEntity->pev->team);
             mapEntity.mSquadNumber = 0;
 			mapEntity.mUnderAttack = theEntityIsUnderAttack ? 1 : 0;
+			mapEntity.mParasited = 0;
 
             bool sendEntity = false;
 

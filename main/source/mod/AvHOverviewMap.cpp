@@ -275,7 +275,7 @@ void AvHOverviewMap::GetColorForEntity(const DrawableEntity& entity, float& outR
 	    		outG = 1.0;
 				outB = 0.0;
 			}
-			// If parasited, always yelllow
+			// If parasited, always yellow
 			if(entity.mIsParasited) {
 				outR = 1.0;
 				outG = 1.0;
