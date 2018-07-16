@@ -244,6 +244,7 @@ public:
 	bool			GetIsInTopDownMode(bool inIncludeSpectating = false) const;
 	bool			GetIsBeingDigested() const;
 	bool			GetIsDigesting() const;
+	bool			GetIsParasited() const;
 	bool			GetIsEntityInSight(CBaseEntity* inEntity);
 	bool			GetIsValidReinforcementFor(AvHTeamNumber inTeam) const;
 	AvHTeamNumber	GetTeam(bool inIncludeSpectating = false) const;

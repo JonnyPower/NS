@@ -9297,6 +9297,18 @@ bool AvHPlayer::GetIsDigesting() const
     return theIsDigesting;
 }
 
+bool AvHPlayer::GetIsParasited() const
+{
+    bool theIsParasited = false;
+
+    if(GetHasUpgrade(this->pev->iuser4, MASK_PARASITED))
+    {
+        theIsParasited = true;
+    }
+
+    return theIsParasited;
+}
+
 void AvHPlayer::UpdateAmbientSounds()
 {
     AvHClassType theClassType = this->GetClassType();
