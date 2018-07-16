@@ -144,4 +144,6 @@ float	ns_cvar_float(const cvar_t *cvar);
 
 #define kvBlockScripts              "mp_blockscripts"
 
+#define kvParasiteIndicators        "mp_parasiteindicators"
+
 #endif
