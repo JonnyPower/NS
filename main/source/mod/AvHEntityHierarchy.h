@@ -63,6 +63,7 @@ public:
     float           mAngle;
     int             mSquadNumber;
 	int				mUnderAttack;
+	int				mParasited;
 
     bool operator==(const MapEntity& e) const
     {

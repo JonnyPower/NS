@@ -50,6 +50,7 @@
 #include "AvHGamerules.h"
 #include "AvHMarineEquipment.h"
 #include "AvHSharedUtil.h"
+#include "AvHServerVariables.h"
 #include "../util/MathUtil.h"
 #endif
 
@@ -234,6 +235,7 @@ void AvHEntityHierarchy::BuildFromTeam(const AvHTeam* inTeam, BaseEntityListType
                     ASSERT(theEntityIndex > 0);
                     ASSERT(theEntityIndex <= 32);
                     mapEntity.mSquadNumber = GetHotkeyGroupContainingPlayer(thePlayer) + 1;
+                    mapEntity.mParasited = thePlayer->GetIsParasited() && CVAR_GET_FLOAT(kvParasiteIndicators) != 0;
 
                     if ((thePlayer->GetPlayMode() == PLAYMODE_PLAYING) && !thePlayer->GetIsSpectator())
                     {
