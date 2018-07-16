@@ -73,6 +73,7 @@ public:
                mY           == e.mY     &&
                mAngle       == e.mAngle &&
 			   mUnderAttack == e.mUnderAttack &&
+			   mParasited	== e.mParasited &&
                mSquadNumber == e.mSquadNumber;
     }
 
