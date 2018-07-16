@@ -8,12 +8,13 @@
 class DrawableEntity
 {
 public:
-	DrawableEntity() : mUser3(AVH_USER3_NONE), mIsAlive(true), mX(0), mY(0), mAngleRadians(0), mIsLocalPlayer(false), mEntityNumber(0), mTeam(TEAM_IND), mSquadNumber(0), mIsUnderAttack(0)
+	DrawableEntity() : mUser3(AVH_USER3_NONE), mIsAlive(true), mX(0), mY(0), mAngleRadians(0), mIsLocalPlayer(false), mEntityNumber(0), mTeam(TEAM_IND), mSquadNumber(0), mIsUnderAttack(0), mIsParasited(false)
 	{}
 	
 	AvHUser3	    mUser3;
 	bool		    mIsAlive;
 	bool			mIsUnderAttack;
+	bool			mIsParasited;
 	int			    mX;
 	int			    mY;
     AvHTeamNumber   mTeam;

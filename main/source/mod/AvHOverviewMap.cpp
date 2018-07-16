@@ -274,7 +274,13 @@ void AvHOverviewMap::GetColorForEntity(const DrawableEntity& entity, float& outR
     			outR = 0.0;
 	    		outG = 1.0;
 				outB = 0.0;
-			}			    
+			}
+			// If parasited, always yelllow
+			if(entity.mIsParasited) {
+				outR = 1.0;
+				outG = 1.0;
+				outB = 0.0;
+			}
 		}
     }
 	else  {
@@ -929,6 +935,7 @@ void AvHOverviewMap::UpdateDrawData(float inCurrentTime)
         theDrawableEntity.mAngleRadians = theIter->second.mAngle * M_PI / 180;
         theDrawableEntity.mSquadNumber  = theIter->second.mSquadNumber;
 		theDrawableEntity.mIsUnderAttack = theIter->second.mUnderAttack;
+		theDrawableEntity.mIsParasited = theIter->second.mParasited;
 
 		// Returns position relative to minimap, so add it back in
 //				commented this out here, commented out corresponding shift in AvHEntityHierarchy::BuildFromTeam at line 234
