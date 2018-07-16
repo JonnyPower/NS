@@ -231,6 +231,7 @@ void GameDLLInit( void )
 	CVAR_REGISTER (&avh_combattime);
     CVAR_REGISTER (&avh_mapvoteratio);
     CVAR_REGISTER (&avh_blockscripts);
+    CVAR_REGISTER (&avh_parasitesindicators);
 
     // TODO: Remove
     CVAR_REGISTER (&avh_ironman);
